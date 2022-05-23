@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  get 'carpets/index'
+  get 'carpets/new'
+  get 'carpets/create'
+  get 'carpets/show'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Defines the root path route ("/")
+  # root "articles#index"
+  resources :carpets do
+    resources :reviews, only: [:create, :destroy, :edit, :update]
+    resources :bookings, only: [:new] do
+      resources :reviews, only: [:new]
+    end
+  end
+  resources :bookings, only: [:edit, :update]
   devise_for :users
   # root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
