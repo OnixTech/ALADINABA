@@ -5,8 +5,17 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  margin-right: 16px;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand {
+  margin-left: 16px;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding-right: 1rem !important;
 }
