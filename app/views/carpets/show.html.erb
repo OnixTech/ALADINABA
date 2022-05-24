@@ -9,10 +9,11 @@
       <p>Condition: <%= @carpet.condition %></p>
     </div>
     <p>Available: <%= @carpet.available %></p>
-    <div>Price: <%= @carpet.price %> per day </div>
+    <div>Price per day: <%= @carpet.price %> €</div>
   </div>
   <div>
     <%= link_to "Book", carpets_index_path, class: "btn btn-dark" %>
     <%= link_to "Edit", edit_carpet_path, class: "btn btn-dark" %>
+    <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
   </div>
 </div>
