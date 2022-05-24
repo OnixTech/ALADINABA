@@ -11,5 +11,5 @@
     <%= @carpet.available %>
     <div><%= @carpet.price %> per day </div>
   </div>
-  <%= link_to "Book", new_carpet_booking_path class: "btn btn-dark" %>
+  <%= link_to "Book", new_carpet_booking_path(@carpet) %>
 </div>

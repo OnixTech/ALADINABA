@@ -1,9 +1,9 @@
-<%= simple_form_for(@booking) do |f| %>
-  <%= start_date = f.input :booked_from, as: :date, html5: true %>
-  <%= end_date = f.input :booked_until, as: :date, html5: true %>
-  <% if start_date >= end_date %>
-    <%=  raise StandardError, 'Your End date has to be after your start date' %>
-  <% else %>
+<%= simple_form_for([@carpet, @booking]) do |f| %>
+  <%= f.input :booked_from, as: :date, html5: true %>
+  <%= f.input :booked_until, as: :date, html5: true %>
+  <%# <% if start_date >= end_date %>
+    <%# <%=  raise StandardError, 'Your End date has to be after your start date' %> %>
+  <%# <% else %> %> %>
     <%= f.submit %>
-  <% end %>
+  <%# <% end %> %>
 <% end %>
