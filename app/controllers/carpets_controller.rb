@@ -14,7 +14,7 @@ class CarpetsController < ApplicationController
   def create
     @carpet = Carpet.new(carpet_params)
     @carpet.user = current_user
-    @carpet.save
+    @carpet.save!
     redirect_to carpets_path
   end
 
