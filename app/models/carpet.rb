@@ -1,6 +1,7 @@
 class Carpet < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :condition, presence: true, inclusion: { in: %w(poor slightly\ used good like\ new) }
   validates :description, length: { minimum: 3, maximum: 500 }, allow_blank: true
