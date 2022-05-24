@@ -1,0 +1,18 @@
+<h1>Your ALADINABA Dashboard</h1>
+<ul>
+<% @carpets.each do |carpet| %>
+  <li><% carpet.name %></li>
+  <li><% carpet.description %></li>
+  <li><% carpet.available %></li>
+<% end %>
+</ul>
+<br>
+<hr>
+<ul>
+<% @bookings.each do |booking| %>
+  <li><% booking.user %></li>
+  <li><% booking.carpet %></li>
+  <li><% booking.booked_from %></li>
+  <li><% booking.booked_until %></li>
+<% end %>
+</ul>

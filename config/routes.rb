@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboards/show'
   get 'carpets/index'
   get 'carpets/new'
   get 'carpets/create'
@@ -13,7 +14,8 @@ Rails.application.routes.draw do
       resources :reviews, only: [:new]
     end
   end
-  resources :bookings, only: [:edit, :update]
+  resources :bookings, only: [:edit, :update, :create]
+  resources :dashboards, only: [:show]
   devise_for :users
   # root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
