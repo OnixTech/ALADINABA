@@ -13,6 +13,7 @@ class CarpetsController < ApplicationController
 
   def create
     @carpet = Carpet.new(carpet_params)
+    @carpet.user = current_user
     @carpet.save
     redirect_to carpets_path
   end
@@ -33,7 +34,7 @@ class CarpetsController < ApplicationController
   private
 
   def carpet_params
-    params.require(:carpet).permit(:name, :description, :condition, :address, :available, :user_id)
+    params.require(:carpet).permit(:name, :description, :condition, :address, :available, :user_id, :price)
   end
 
   def set_carpets
