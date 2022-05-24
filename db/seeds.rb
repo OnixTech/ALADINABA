@@ -1,10 +1,8 @@
 
 puts "Cleaning DB of prev records"
 
-User.destroy_all
 Carpet.destroy_all
-
-puts "create 1 user"
+User.destroy_all
 
 user1 = User.new(
   email: "user@mail.com",
@@ -21,7 +19,7 @@ name = ["Persian carpet", "Cat carpet", "Hole carpet", "Forest carpet"]
 description = ["Fuck you Tony!", "Better not rent it", "Not too bad, not too bad", "Perfect condition", "good condition, like 0km"]
 address = ["catch me if you can", "High Avenue Z, next to the bridge", "Kulamalab 56, Istanbul", "Badstrasse 43, 10345 Berlin", "Koloniestrasse 140, 13359 Berlin"]
 
-20.times do |i|
+20.times do
     Carpet.create(
     name: name.sample,
     description: description.sample,
@@ -29,6 +27,6 @@ address = ["catch me if you can", "High Avenue Z, next to the bridge", "Kulamala
     condition: "like new",
     price: 12,
     available: true,
-    user_id: 1
-    )
+    user: user1
+  )
 end
