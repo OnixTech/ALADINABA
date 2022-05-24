@@ -1,0 +1,8 @@
+<%= simple_form_for(carpet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :condition, collection: ["poor", "slightly used", "good", "like new"] %>
+  <%= f.input :price %>
+  <%= f.submit class:"btn btn-dark" %>
+<% end %>
