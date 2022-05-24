@@ -6,4 +6,5 @@ class Carpet < ApplicationRecord
   validates :description, length: { minimum: 3, maximum: 500 }, allow_blank: true
   validates :address, presence: true
   validates :user_id, presence: true
+  validates :price, presence: true
 end

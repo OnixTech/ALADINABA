@@ -1,2 +1,15 @@
-<h1>Carpets#show</h1>
-<p>Find me in app/views/carpets/show.html.erb</p>
+<div class="d-flex show-card">
+  <div class="show-card-details">
+    <div class="show-card-title">
+      <h2><%= @carpet.name %></h2>
+    </div>
+    <div class="show-card-details">
+      <p><%= @carpet.description %></p>
+      <%= @carpet.address %>
+      <%= @carpet.condition %>
+    </div>
+    <%= @carpet.available %>
+    <div><%= @carpet.price %> per day </div>
+  </div>
+  <%= link_to "Book", new_carpet_booking_path class: "btn btn-dark" %>
+</div>
