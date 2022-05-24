@@ -4,12 +4,16 @@
       <h2><%= @carpet.name %></h2>
     </div>
     <div class="show-card-details">
-      <p><%= @carpet.description %></p>
-      <%= @carpet.address %>
-      <%= @carpet.condition %>
+      <p>Description: <%= @carpet.description %></p>
+      <p>Address: <%= @carpet.address %></p>
+      <p>Condition: <%= @carpet.condition %></p>
     </div>
-    <%= @carpet.available %>
-    <div><%= @carpet.price %> per day </div>
+    <p>Available: <%= @carpet.available %></p>
+    <div>Price: <%= @carpet.price %> per day </div>
+  </div>
+  <div>
+    <%= link_to "Book", carpets_index_path, class: "btn btn-dark" %>
+    <%= link_to "Edit", edit_carpet_path, class: "btn btn-dark" %>
   </div>
   <%= link_to "Book", new_carpet_booking_path(@carpet) %>
 </div>
