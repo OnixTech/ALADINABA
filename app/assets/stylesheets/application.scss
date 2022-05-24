@@ -12,10 +12,10 @@
 @import "components/navbar";
 @import "components/footer";
 @import "pages/index";
-@import "components/cards";
 @import "components/container";
 @import "components/card";
 @import "components/form";
+@import "components/banner";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -27,4 +27,10 @@ h1 {
 
 .main-page {
   background-color: white;
+}
+
+.page-title {
+  font-weight: bold;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }

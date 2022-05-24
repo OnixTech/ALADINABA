@@ -1,5 +1,10 @@
 <div class="container">
-    <h1>Carpets</h1>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(carpet-banenr.jpeg);">
+  <div class="container">
+    <h1><strong>Welcome to Aladinaba</strong></h1>
+    <p>Rent a beautiful carpet for a day</p>
+  </div>
+  </div>
 
   <div class="container-cards">
     <% @carpets.each do |carpet| %>
@@ -9,16 +14,16 @@
           <p><%= carpet.description %></p>
         </div>
         <div class="cards-bottom">
-          <h2"><%= carpet.price%>€</h2>
+          <h2><%= carpet.price%>€</h2>
         </div>
       </div>
     <% end %>
   </div>
-  
-  
+
+
   <br>
     <h3 type="button ">
-      <%= link_to 'New Carpet', new_carpet_path %>
+      <%= link_to 'New Carpet', new_carpet_path, class:"btn btn-dark" %>
     </h3>
   <br>
 
