@@ -1,0 +1,17 @@
+<div class="d-flex show-card">
+  <div class="show-card-details">
+    <div class="show-card-title">
+      <h2><%= @carpet.name %></h2>
+    </div>
+    <div class="show-card-details">
+      <p>Description: <%= @carpet.description %></p>
+      <p>Address: <%= @carpet.address %></p>
+      <p>Condition: <%= @carpet.condition %></p>
+    </div>
+    <p>Available: <%= @carpet.available %></p>
+    <div>Price: <%= @carpet.price %> per day </div>
+  </div>
+  <div>
+    <%= link_to "Book", carpets_index_path, class: "btn btn-dark" %>
+  </div>
+</div>

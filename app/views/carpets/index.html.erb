@@ -1,2 +1,18 @@
-<h1>Carpets#index</h1>
+<h1>Carpets</h1>
 <p>Find me in app/views/carpets/index.html.erb</p>
+
+<div class="container">
+  <div class="cards">
+    <div class="card-category">
+      <h4><%= render 'carpet_list', carpets: @carpets %></h4>
+    </div>
+  </div>
+
+  <% @carpets.each do |carpet| %>
+  <h6><%= carpet.name %></h6>
+  <% end %>
+
+  <br>
+  <%= link_to 'New Carpet', new_carpet_path %>
+  <br>
+</div>
