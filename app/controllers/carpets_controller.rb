@@ -33,7 +33,7 @@ class CarpetsController < ApplicationController
   private
 
   def carpet_params
-    params.require(:carpet).permit(:name, :description, :condition, :address, :available, :user_id)
+    params.require(:carpet).permit(:name, :description, :condition, :address, :available, :user_id, :photo)
   end
 
   def set_carpets
