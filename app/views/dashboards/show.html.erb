@@ -11,6 +11,7 @@
 <br>
 <hr>
 <ul>
+
 <% current_user.booking_ids.each do |booking_id| %>
   <% booking = Booking.find(booking_id) %>
   <h3>Booking Nr <%= booking_id %></h3>
