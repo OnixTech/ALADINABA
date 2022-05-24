@@ -3,12 +3,19 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @carpet = Carpet.find(params[:carpet_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
-    redirect_to dashboards_path
+    @booking.user = current_user
+    @carpet = Carpet.find(params[:carpet_id])
+    @booking.carpet = @carpet
+     if @booking.save
+      redirect_to dashboards_show_path
+     else
+      render :new
+     end
   end
 
   def edit
@@ -22,7 +29,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:booked_until, :booked_from, :rating, :carpet_id, :user_id)
+    params.require(:booking).permit(:booked_until, :booked_from, :rating)
   end
 
   def set_bookings

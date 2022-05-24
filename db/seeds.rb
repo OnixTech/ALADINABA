@@ -1,24 +1,17 @@
-<<<<<<< HEAD
-
-puts "Cleaning DB of prev records"
-=======
->>>>>>> master
 
 puts "Cleaning DB of prev records"
 
 Carpet.destroy_all
 User.destroy_all
 
-<<<<<<< HEAD
 puts "create 1 user"
 
-=======
->>>>>>> master
 user1 = User.new(
   email: "user@mail.com",
   password: "123456"
   )
 user1.save!
+
 user2 = User.new(
   email: "user2@mail.com",
   password: "123456"
@@ -40,3 +33,4 @@ address = ["catch me if you can", "High Avenue Z, next to the bridge", "Kulamala
     user: user1
   )
 end
+
