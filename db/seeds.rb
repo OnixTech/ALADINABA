@@ -24,6 +24,8 @@ name = ["Persian carpet", "Cat carpet", "Hole carpet", "Forest carpet"]
 description = ["Fuck you Tony!", "Better not rent it", "Not too bad, not too bad", "Perfect condition", "good condition, like 0km"]
 address = ["catch me if you can", "High Avenue Z, next to the bridge", "Kulamalab 56, Istanbul", "Badstrasse 43, 10345 Berlin", "Koloniestrasse 140, 13359 Berlin"]
 
+
+
 file = URI.open("https://m.media-amazon.com/images/I/81F9KaYblyL._SL1280_.jpg")
 a = Carpet.new(name: name.sample,
 description: description.sample,
@@ -32,7 +34,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-a.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+a.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 a.save
 
 file = URI.open("https://stamboulbazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/10/Buy-turkish-carpets-rugs.jpg.webp")
@@ -43,7 +45,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-b.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+b.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 b.save
 
 file = URI.open("https://www.christovalcarpets.com/wp-content/uploads/2018/06/Carpets.jpg")
@@ -54,7 +56,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-c.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+c.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 c.save
 
 file = URI.open("https://www.rugvista.de/image/desk_pdp_zoom/423277.jpg")
@@ -65,7 +67,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-d.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+d.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 d.save
 
 file = URI.open("https://stamboulbazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/10/Buy-turkish-carpets-rugs.jpg.webp")
@@ -76,7 +78,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-b.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+b.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 b.save
 
 file = URI.open("https://stamboulbazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/10/Buy-turkish-carpets-rugs.jpg.webp")
@@ -87,7 +89,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-e.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+e.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 e.save
 
 file = URI.open("https://stamboulbazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/10/Buy-turkish-carpets-rugs.jpg.webp")
@@ -98,7 +100,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-f.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+f.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 f.save
 
 file = URI.open("https://stamboulbazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/10/Buy-turkish-carpets-rugs.jpg.webp")
@@ -109,7 +111,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-f.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+f.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 f.save
 
 file = URI.open("https://stamboulbazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/10/Buy-turkish-carpets-rugs.jpg.webp")
@@ -120,7 +122,7 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-g.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+g.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
 g.save
 
 file = URI.open("https://stamboulbazaar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/10/Buy-turkish-carpets-rugs.jpg.webp")
