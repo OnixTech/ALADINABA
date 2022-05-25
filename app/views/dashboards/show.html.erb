@@ -1,5 +1,7 @@
-<h1>Your ALADINABA Dashboard</h1>
-<h2><%= current_user.carpet_ids %></h2>
+<div class="container">
+  <h1>Your ALADINABA Dashboard</h1>
+</div>
+<%# <h2><%= current_user.carpet_ids %></h2>
 <ul>
 <% current_user.carpet_ids.each do |carpet_id| %>
   <% carpet = Carpet.find(carpet_id)%>
@@ -10,13 +12,15 @@
 </ul>
 <br>
 <hr>
-<ul>
-<% current_user.booking_ids.each do |booking_id| %>
-  <% booking = Booking.find(booking_id) %>
-  <h3>Booking Nr <%= booking_id %></h3>
-  <li>Carpet Name: <%= booking.carpet.name %></li>
-  <li>Booked from: <%= booking.booked_from %></li>
-  <li>Booked until: <%= booking.booked_until %></li>
-  <br>
-<% end %>
-</ul>
+<div class="container d-flex flex-row flex-wrap p-3">
+  <% current_user.booking_ids.each do |booking_id| %>
+    <ul class="cards list-unstyled p-3">
+    <% booking = Booking.find(booking_id) %>
+    <h3>Booking Nr <%= booking_id %></h3>
+    <li><h4> <%= booking.carpet.name %></h4></li>
+    <li>Booked from: <%= booking.booked_from %></li>
+    <li>Booked until: <%= booking.booked_until %></li>
+    <br>
+  </ul>
+  <% end %>
+</div>
