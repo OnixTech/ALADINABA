@@ -8,6 +8,9 @@
   <li>Name: <%= carpet.name%></li>
   <li>Description: <%= carpet.description%></li>
   <li>Available: <%= carpet.available%></li>
+  <div>
+  <%= cl_image_tag carpet.photo.key, width: 400, crop: :fill %>
+  </div>
 <% end %>
 </ul>
 <br>

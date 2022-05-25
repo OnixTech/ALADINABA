@@ -4,12 +4,16 @@
   <div class="container-cards">
     <% @carpets.each do |carpet| %>
       <div class="cards">
-        <div class="cards-top">
+        <div class="card-img-top">
+           <%= cl_image_tag carpet.photo.key, width: 300, crop: :fill %>
+        </div>
+        <div class="card-body">
           <h2><%= carpet.name %></h2>
           <p><%= carpet.description %></p>
         </div>
+          <li>Available: <%= carpet.available%></li>
         <div class="cards-bottom">
-          <h2"><%= carpet.price%>€</h2>
+          <h2><%= carpet.price%>€</h2>
         </div>
       </div>
     <% end %>
