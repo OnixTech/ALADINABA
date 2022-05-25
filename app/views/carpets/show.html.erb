@@ -1,5 +1,4 @@
 <div class="d-flex show-card">
-  <div class="show-card-details">
     <div class="show-card-title">
       <h2><%= @carpet.name %></h2>
 
@@ -14,11 +13,10 @@
     </div>
     <p>Available: <%= @carpet.available %></p>
     <div>Price per day: <%= @carpet.price %> €</div>
-  </div>
-  <div>
+  <div class="">
     <%= link_to "All Carpets", carpets_path, class: "btn btn-dark" %>
     <%= link_to "Edit", edit_carpet_path(@carpet), class: "btn btn-dark" %>
     <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
+    <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark" %>
   </div>
-  <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark" %>
 </div>
