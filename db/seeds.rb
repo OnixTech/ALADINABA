@@ -133,5 +133,5 @@ condition: "like new",
 price: 12,
 available: true,
 user: user1)
-h.photo.attach(io: file, filename: "nes.png", content_type: "image/jpg")
+h.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 h.save
