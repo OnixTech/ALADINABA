@@ -7,7 +7,7 @@
   <li>Description: <%= carpet.description%></li>
   <li>Available: <%= carpet.available%></li>
   <div>
-  <%= cl_image_tag carpet.photo.key, height: 300 width: 400, crop: :fill %>
+  <%= cl_image_tag carpet.photo.key, width: 400, crop: :fill %>
   </div>
 <% end %>
 </ul>
