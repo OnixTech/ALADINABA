@@ -3,6 +3,7 @@
 
   <div class="container-cards">
     <% @carpets.each do |carpet| %>
+    <a class="text-decoration-none link-dark" href=""><%  %>
       <div class="cards">
         <div class="cards-top">
           <h2><%= carpet.name %></h2>
@@ -12,8 +13,10 @@
           <h2"><%= carpet.price%>€</h2>
         </div>
       </div>
+    </a>
     <% end %>
   </div>
+
   
   
   <br>
