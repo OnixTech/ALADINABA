@@ -1,14 +1,13 @@
-<div class="container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1560807454-c23ba0bfa2bb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872);">
-  <div class="container">
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1560807454-c23ba0bfa2bb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872);">
     <div class="banner-text">
       <h1><strong>Welcome to Aladinaba</strong></h1>
       <br>
       <p>Rent a beautiful carpet for a day</p>
     </div>
-  </div>
-  </div>
+</div>
 
+
+<div class="container">
   <div class="container-cards">
     <% @carpets.each do |carpet| %>
       <div class="cards">
@@ -29,5 +28,5 @@
       <%= link_to 'New Carpet', new_carpet_path, class:"btn btn-dark" %>
     </h3>
   <br>
-
 </div>
+
