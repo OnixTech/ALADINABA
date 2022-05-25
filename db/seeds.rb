@@ -33,4 +33,3 @@ address = ["catch me if you can", "High Avenue Z, next to the bridge", "Kulamala
     user: user1
   )
 end
-
