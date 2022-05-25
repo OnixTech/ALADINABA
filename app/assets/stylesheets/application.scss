@@ -12,10 +12,10 @@
 @import "components/navbar";
 @import "components/footer";
 @import "pages/index";
-@import "components/cards";
 @import "components/container";
 @import "components/card";
 @import "components/form";
+@import "components/banner";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -23,8 +23,10 @@ body {
 
 h1 {
   font-family: 'Raleway', sans-serif;
+  font-weight: 600;
 }
 
 .main-page {
   background-color: white;
+  width: 100%;
 }
