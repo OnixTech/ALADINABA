@@ -1,14 +1,23 @@
-<div class="d-flex show-card d-flex justify-content-center">
+<div>
   <div class="show-card-details">
     <div class="show-card-title">
       <h2><%= @carpet.name %></h2>
 
     </div>
-
-    <div class="show-card-details">
+    <div class="d-flex show-card d-flex justify-content-center">
+    <div>
+    <div class="my-3">
       <p>Description: <%= @carpet.description %></p>
       <p>Address: <%= @carpet.address %></p>
       <p>Condition: <%= @carpet.condition %></p>
+      <p>Available: <%= @carpet.available %></p>
+    <div>Price per day: <%= @carpet.price %> €</div>
+         </div>
+        <div class= "py-3">
+      <%= link_to "Edit", edit_carpet_path(@carpet), class: "btn btn-dark" %>
+       <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
+    <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark" %>
+    </div>
     </div>
     <div>
       <% if @carpet.photo.attached? %>
@@ -16,14 +25,14 @@
       <% else %>
         <% @carpet.photo.attached = "https://images.unsplash.com/photo-1588421874990-1fe162747f9b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" %>
       <% end %>
+
     </div>
-    <p>Available: <%= @carpet.available %></p>
-    <div>Price per day: <%= @carpet.price %> €</div>
+
+    </div>
+
   </div>
   <div>
-    <%= link_to "Edit", edit_carpet_path(@carpet), class: "btn btn-dark" %>
-    <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
-    <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark" %>
+
   </div>
   
 </div>
