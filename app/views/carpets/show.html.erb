@@ -4,13 +4,13 @@
       <h2><%= @carpet.name %></h2>
 
     </div>
-    <div class="show-card-details">
+    <div class="details">
       <p>Description: <%= @carpet.description %></p>
       <p>Address: <%= @carpet.address %></p>
       <p>Condition: <%= @carpet.condition %></p>
     </div>
     <div>
-    <%= cl_image_tag @carpet.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# <%= cl_image_tag @carpet.photo.key, height: 300, width: 400, crop: :fill %> %>
     </div>
     <p>Available: <%= @carpet.available %></p>
     <div>Price per day: <%= @carpet.price %> €</div>
