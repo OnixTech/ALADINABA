@@ -4,5 +4,6 @@
   <%= f.input :address %>
   <%= f.input :condition, collection: ["poor", "slightly used", "good", "like new"] %>
   <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit class:"btn btn-dark" %>
 <% end %>
