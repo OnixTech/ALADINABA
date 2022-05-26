@@ -19,11 +19,14 @@
   <% current_user.booking_ids.each do |booking_id| %>
     <ul class="cards list-unstyled p-3">
     <% booking = Booking.find(booking_id) %>
+    <% total_booking_time =  booking.booked_until - booking.booked_from%>
     <h3>Booking Nr <%= booking_id %></h3>
     <li><h4> <%= booking.carpet.name %></h4></li>
     <li>Booked from: <%= booking.booked_from %></li>
     <li>Booked until: <%= booking.booked_until %></li>
+    <li><strong>Price total: <%= booking.carpet.price * (total_booking_time.to_i + 1) %></strong></li>
     <br>
+    <%= link_to "Delete booking", dashboards_show_path(booking.destroy) %>
   </ul>
   <% end %>
 </div>
