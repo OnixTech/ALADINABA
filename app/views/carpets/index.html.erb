@@ -5,15 +5,6 @@
       <p>Rent a beautiful carpet for a day</p>
     </div>
 </div>
-<div class="row">
-  <div class="col-md-2">
-    <div id="new-carpet-card" class="card" style="width: 18rem">
-     <div class="card-body">
-      <h3>Add a new carpet</h3></div>
-      <%= link_to 'New Carpet', new_carpet_path, class:"btn btn-dark" %>
-     </div>
-  </div>
-</div>
 
 <div class="container-cards">
   <% @carpets.each do |carpet| %>
