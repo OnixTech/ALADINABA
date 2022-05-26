@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
+import DatepickrController from "./datepickr_controller.js"
+application.register("datepickr", DatepickrController)
+
+import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)

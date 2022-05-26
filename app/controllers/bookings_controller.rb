@@ -4,6 +4,10 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @carpet = Carpet.find(params[:carpet_id])
+    @carpet_bookings = []
+    @carpet.bookings.each do |booking|
+      @carpet_bookings << {from: booking.booked_from, to: booking.booked_until}
+    end
   end
 
   def create
@@ -21,9 +25,14 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  def destroy
+    @booking.destroy
+    redirect_to dashboards_show_path, status: :see_other
+  end
+
   def update
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to dashboards_show_path
   end
 
   private
