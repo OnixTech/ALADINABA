@@ -1,6 +1,6 @@
 //STYLES
 .cards {
-  min-height: 500px;
+  height: 500px;
   width: 300px;
   min-width: 300px;
   padding: 32px;
@@ -11,10 +11,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  &:hover {
+    animation: glowing 1s ease-in-out infinite alternate;
+    transition: 1s;
+  }
 }
 
 .cards > img {
   object-fit: contain;
+  
+  &:hover {
+    color: orange;
+    transform: scale(1.1);
+  }
 }
 
 .cards h2 {
