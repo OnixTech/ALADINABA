@@ -5,42 +5,34 @@
       <p>Rent a beautiful carpet for a day</p>
     </div>
 </div>
-
 <div class="row">
   <div class="col-md-2">
     <div id="new-carpet-card" class="card" style="width: 18rem">
-      <div class="card-body">
-        <h3>Add a new carpet</h3></div>
-        <%= link_to 'New Carpet', new_carpet_path, class:"btn btn-dark" %>
-      </div>
-    </div>
+     <div class="card-body">
+      <h3>Add a new carpet</h3></div>
+      <%= link_to 'New Carpet', new_carpet_path, class:"btn btn-dark" %>
+     </div>
   </div>
+</div>
 
-  <div class="col-md-10">
-    <div class="container">
-      <div class="container-cards">
-        <% @carpets.each do |carpet| %>
-          <%= link_to carpet_path(carpet), class: "text-decoration-none link-dark" do %>
-            <div class="cards">
-              <div class="card-img-top">
-              <% if carpet.photo.attached? %>
-                <%= cl_image_tag carpet.photo.key, width: 250, crop: :fill %>
-              <% else %>
-                <% carpet.photo.attached = "https://images.unsplash.com/photo-1588421874990-1fe162747f9b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" %>
-              <% end %>
-              </div>
-              <div class="card-body">
-                <h3><%= carpet.name %></h3>
-                <p><%= carpet.description %></p>
-              </div>
-                Available: <%= carpet.available%>
-              <div class="cards-bottom">
-                <h2>Price: <%= carpet.price%>€</h2>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+<div class="container-cards">
+  <% @carpets.each do |carpet| %>
+    <%= link_to carpet_path(carpet), class: "text-decoration-none link-dark" do %>
+    <div class="cards">
+      <% if carpet.photo.attached? %>
+          <%= cl_image_tag carpet.photo.key, width: 250, crop: :fill %>
+      <% end %>
+      <div class="card-body">
+        <div class="cards-bottom-left">
+          <h3><%= carpet.name %></h3>
+          <p><%= carpet.description %></p>
+          Available: <%= carpet.available%>
+        </div>
+        <div class="cards-bottom-right">
+          <h2>Price: <%= carpet.price%>€</h2>
+        </div>
       </div>
     </div>
-  </div>
+    <% end %>
+  <% end %>
 </div>
