@@ -15,7 +15,7 @@ class CarpetsController < ApplicationController
     @carpet = Carpet.new(carpet_params)
     @carpet.user = current_user
     @carpet.save!
-    redirect_to carpets_path
+    redirect_to carpet_path(@carpet)
   end
 
   def edit
