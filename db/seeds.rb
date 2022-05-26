@@ -4,14 +4,14 @@ puts "Cleaning DB of prev records"
 Carpet.destroy_all
 User.destroy_all
 
-puts "create 1 user"
-
+puts "create first user"
 user1 = User.new(
   email: "user@mail.com",
   password: "123456"
   )
 user1.save!
 
+puts "create second user"
 user2 = User.new(
   email: "user2@mail.com",
   password: "123456"
@@ -25,7 +25,7 @@ description = ["Fuck you Tony!", "Better not rent it", "Not too bad, not too bad
 address = ["catch me if you can", "High Avenue Z, next to the bridge", "Kulamalab 56, Istanbul", "Badstrasse 43, 10345 Berlin", "Koloniestrasse 140, 13359 Berlin"]
 
 
-
+puts "creating carpets"
 file = URI.open("https://m.media-amazon.com/images/I/81F9KaYblyL._SL1280_.jpg")
 a = Carpet.new(name: name.sample,
 description: description.sample,
@@ -135,3 +135,5 @@ available: true,
 user: user1)
 h.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 h.save
+
+puts "Finished!...."
