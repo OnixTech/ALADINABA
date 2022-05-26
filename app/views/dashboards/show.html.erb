@@ -8,29 +8,23 @@
 
 <div class="page-title"><h1>My Carpets</h1></div>
 
-<div class="container-cards">
+<div class="container-cards dashboard-contaner">
   <% current_user.carpet_ids.each do |carpet_id| %>
     <% carpet = Carpet.find(carpet_id)%>
-    <div class="cards">
+    <div class="cards cards-dashboard">
+      <% if carpet.photo.attached? %>
+        <%= cl_image_tag carpet.photo.key, width: 250, crop: :fill %>
+      <% end %>
 
-        <% if carpet.photo.attached? %>
-          <%= cl_image_tag carpet.photo.key, width: 250, crop: :fill %>
-        <% end %>
+      <div class="card-body">
+        <h3><%= carpet.name%></h3>
+        <p><%= carpet.description%></p>
+        <p id="index-price">$ <%= carpet.price%> day</p>
 
-        <div class="card-body">
-          <h3><%= carpet.name%></h3>
-          <p><%= carpet.description%></p>
-          <p id="index-price">$ <%= carpet.price%> day</p>
+        <br>
 
-          <br>
-
-          <%= link_to "Delete", carpet_path(carpet_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
-          <%= link_to "Edit", edit_carpet_path(carpet_id), class: "btn btn-dark" %>
-        <div>
-        
-
-        </div>
-        </div>
+        <%= link_to "Delete", carpet_path(carpet_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
+        <%= link_to "Edit", edit_carpet_path(carpet_id), class: "btn btn-dark" %>
       </div>
     </div>
   <% end %>
@@ -41,7 +35,7 @@
 
 <div class="page-title"><h1>My Bookings</h1></div>
 
-<div class="container-cards">
+<div class="container-cards dashboard-contaner">
   <% current_user.booking_ids.each do |booking_id| %>
     <% booking = Booking.find(booking_id) %>
     <div class="cards cards-dashboard">
