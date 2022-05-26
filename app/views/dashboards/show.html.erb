@@ -1,37 +1,61 @@
-<div class="container">
-  <h1>Your ALADINABA Dashboard</h1>
-</div>
-<%# <h2><%= current_user.carpet_ids %></h2>
-<div class="container d-flex flex-row flex-wrap p-3">
-  <% current_user.carpet_ids.each do |carpet_id| %>
-  <ul class="cards list-unstyled p-3">
-    <% carpet = Carpet.find(carpet_id)%>
-    <li>Name: <%= carpet.name%></li>
-    <li>Description: <%= carpet.description%></li>
-    <li>Available: <%= carpet.available%></li>
-    <div>
-    <%= cl_image_tag carpet.photo.key, width: 400, crop: :fill %>
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1560807454-c23ba0bfa2bb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872);">
+    <div class="banner-text">
+      <h1><strong>My dashboard</strong></h1>
+      <br>
+      <br>
     </div>
-  </ul>
 </div>
-<% end %>
+
+<div class="page-title"><h1>My Carpets</h1></div>
+
+<div class="container-cards">
+  <% current_user.carpet_ids.each do |carpet_id| %>
+    <% carpet = Carpet.find(carpet_id)%>
+    <div class="cards">
+      <div class="card-image">
+        <% if carpet.photo.attached? %>
+          <%= cl_image_tag carpet.photo.key, width: 250, crop: :fill %>
+        <% end %>
+        <div class="card-body">
+          <h3><%= carpet.name%></h3>
+          <p><%= carpet.description%></p>
+          <p id="index-price">$ <%= carpet.price%> day</p>
+        <div>
+          <%= link_to "Delete", carpet_path(carpet_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
+          <%= link_to "Edit", edit_carpet_path(carpet_id), class: "btn btn-dark" %>
+        </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <br>
 <hr>
-<div class="container d-flex flex-row flex-wrap p-3">
+
+<div class="page-title"><h1>My Bookings</h1></div>
+
+<div class="container-cards">
   <% current_user.booking_ids.each do |booking_id| %>
-    <ul class="cards list-unstyled p-3">
     <% booking = Booking.find(booking_id) %>
-    <% total_booking_time =  booking.booked_until - booking.booked_from%>
-    <h3>Booking Nr <%= booking_id %></h3>
-    <%= cl_image_tag booking.carpet.photo.key, width: 400, crop: :fill %>
-    <li><h4> <%= booking.carpet.name %></h4></li>
-    <li>Booked from: <%= booking.booked_from %></li>
-    <li>Booked until: <%= booking.booked_until %></li>
-    <li><strong>Price total: <%= booking.carpet.price * (total_booking_time.to_i + 1) %></strong></li>
-    <br>
-    <%= link_to "Delete booking", delete_booking_path(booking_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <%= link_to "Edit booking", edit_booking_path(booking_id) %>
-  </ul>
+    <div class="cards">
+      <div class="card-image">
+        <% if booking.carpet.photo.attached? %>
+          <%= cl_image_tag booking.carpet.photo.key, width: 250, crop: :fill %>
+        <% end %>
+      <div class="card-body">
+        <% total_booking_time =  booking.booked_until - booking.booked_from%>
+        <h3> <%= booking.carpet.name %></h3>
+        <p>Booked from:
+        <br>
+        <%= booking.booked_from %> to <%= booking.booked_until %></p>
+        <p id="index-price"> Total $ <%= booking.carpet.price * (total_booking_time.to_i + 1) %></p>
+      <div>
+        <%= link_to "Delete", delete_booking_path(booking_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
+        <%= link_to "Edit", edit_booking_path(booking_id), class: "btn btn-dark" %>
+      </div>
+      </div>
+      </div>
+    </div>
   <% end %>
 </div>

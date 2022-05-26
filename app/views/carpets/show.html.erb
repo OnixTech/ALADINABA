@@ -24,8 +24,6 @@
       <% else %>
         <% @carpet.photo.attached = "https://images.unsplash.com/photo-1588421874990-1fe162747f9b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" %>
       <% end %>
-<<<<<<< HEAD
-=======
     </div>
     <p>Available: <%= @carpet.available %></p>
     <div>Price per day: <%= @carpet.price %> €</div>
@@ -35,7 +33,6 @@
         <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
         <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark" %>
       </div>
->>>>>>> 1a6ee17941fe91d3446fece05e04b468c3292d69
     </div>
   </div>
 </div>
