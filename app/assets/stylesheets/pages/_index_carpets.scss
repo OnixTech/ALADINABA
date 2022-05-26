@@ -1,6 +1,12 @@
 
 .container-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.page-title {
+  margin-left: 32px;
+  margin-top: 32px;
 }
