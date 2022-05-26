@@ -2,29 +2,34 @@
 .cards {
   height: 500px;
   width: 300px;
-  min-width: 300px;
-  padding: 32px;
-  margin: 16px;
+  margin: 5px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
 
   &:hover {
-    animation: glowing 1s ease-in-out infinite alternate;
+    color: rgba(0,0,0,0.9);
     transition: 1s;
+    transform: scale(1.01);
   }
 }
 
 .cards > img {
-  object-fit: contain;
-  
-  &:hover {
-    color: rgba(0,0,0,0.2);
-    transform: scale(1.1);
-  }
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  object-fit:cover;
+  border-radius: 3%;
+}
+
+.card-body {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .cards h2 {
