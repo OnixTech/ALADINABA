@@ -2,17 +2,20 @@
   <h1>Your ALADINABA Dashboard</h1>
 </div>
 <%# <h2><%= current_user.carpet_ids %></h2>
-<ul>
-<% current_user.carpet_ids.each do |carpet_id| %>
-  <% carpet = Carpet.find(carpet_id)%>
-  <li>Name: <%= carpet.name%></li>
-  <li>Description: <%= carpet.description%></li>
-  <li>Available: <%= carpet.available%></li>
-  <div>
-  <%= cl_image_tag carpet.photo.key, width: 400, crop: :fill %>
-  </div>
+<div class="container d-flex flex-row flex-wrap p-3">
+  <% current_user.carpet_ids.each do |carpet_id| %>
+  <ul class="cards list-unstyled p-3">
+    <% carpet = Carpet.find(carpet_id)%>
+    <li>Name: <%= carpet.name%></li>
+    <li>Description: <%= carpet.description%></li>
+    <li>Available: <%= carpet.available%></li>
+    <div>
+    <%= cl_image_tag carpet.photo.key, width: 400, crop: :fill %>
+    </div>
+  </ul>
+</div>
 <% end %>
-</ul>
+
 <br>
 <hr>
 <div class="container d-flex flex-row flex-wrap p-3">
@@ -21,12 +24,14 @@
     <% booking = Booking.find(booking_id) %>
     <% total_booking_time =  booking.booked_until - booking.booked_from%>
     <h3>Booking Nr <%= booking_id %></h3>
+    <%= cl_image_tag booking.carpet.photo.key, width: 400, crop: :fill %>
     <li><h4> <%= booking.carpet.name %></h4></li>
     <li>Booked from: <%= booking.booked_from %></li>
     <li>Booked until: <%= booking.booked_until %></li>
     <li><strong>Price total: <%= booking.carpet.price * (total_booking_time.to_i + 1) %></strong></li>
     <br>
-    <%= link_to "Delete booking", dashboards_show_path(booking.destroy) %>
+    <%= link_to "Delete booking", delete_booking_path(booking_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to "Edit booking", edit_booking_path(booking_id) %>
   </ul>
   <% end %>
 </div>

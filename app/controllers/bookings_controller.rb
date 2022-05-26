@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to dashboards_show_path
   end
 
   private
