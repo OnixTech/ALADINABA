@@ -4,6 +4,10 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @carpet = Carpet.find(params[:carpet_id])
+    @carpet_bookings = []
+    @carpet.bookings.each do |booking|
+      @carpet_bookings << {from: booking.booked_from, to: booking.booked_until}
+    end
   end
 
   def create
