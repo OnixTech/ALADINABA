@@ -12,17 +12,22 @@
   <% current_user.carpet_ids.each do |carpet_id| %>
     <% carpet = Carpet.find(carpet_id)%>
     <div class="cards">
-      <div class="card-image">
+
         <% if carpet.photo.attached? %>
           <%= cl_image_tag carpet.photo.key, width: 250, crop: :fill %>
         <% end %>
+
         <div class="card-body">
           <h3><%= carpet.name%></h3>
           <p><%= carpet.description%></p>
           <p id="index-price">$ <%= carpet.price%> day</p>
-        <div>
+
+          <br>
+
           <%= link_to "Delete", carpet_path(carpet_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
           <%= link_to "Edit", edit_carpet_path(carpet_id), class: "btn btn-dark" %>
+        <div>
+
         </div>
         </div>
       </div>
@@ -38,11 +43,12 @@
 <div class="container-cards">
   <% current_user.booking_ids.each do |booking_id| %>
     <% booking = Booking.find(booking_id) %>
-    <div class="cards">
-      <div class="card-image">
+    <div class="cards cards-dashboard">
+
         <% if booking.carpet.photo.attached? %>
           <%= cl_image_tag booking.carpet.photo.key, width: 250, crop: :fill %>
         <% end %>
+
       <div class="card-body">
         <% total_booking_time =  booking.booked_until - booking.booked_from%>
         <h3> <%= booking.carpet.name %></h3>
@@ -50,12 +56,13 @@
         <br>
         <%= booking.booked_from %> to <%= booking.booked_until %></p>
         <p id="index-price"> Total $ <%= booking.carpet.price * (total_booking_time.to_i + 1) %></p>
-      <div>
+
+        <br>
+
         <%= link_to "Delete", delete_booking_path(booking_id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
         <%= link_to "Edit", edit_booking_path(booking_id), class: "btn btn-dark" %>
       </div>
-      </div>
-      </div>
+
     </div>
   <% end %>
 </div>
