@@ -1,5 +1,5 @@
 .footer {
-  background: #4F476C;
+  background: $primary-purple;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +23,7 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #B49738;
+  color: $secondary-yellow;
 }
 
 .footer-container {

@@ -17,17 +17,16 @@
 @import "components/form";
 @import "components/banner";
 
+$light-background: #fafafa;
+$primary-purple: #4F476C;
+$secondary-yellow: #B49738;
+
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #fafafa;
+  background-color: $light-background !important;
 }
 
 h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
-}
-
-.main-page {
-  background-color: white;
-  width: 100%;
 }

@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #FFFFFF;
+  background: white;
+  border-bottom-color: $primary-purple;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,4 +21,9 @@
 
 .navbar-expand-sm .navbar-nav .nav-link {
   padding-right: 1rem !important;
+}
+
+.nav-link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
