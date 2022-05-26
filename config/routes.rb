@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   resources :bookings, only: [:edit, :update]
+  delete "/bookings/:id", to: "bookings#destroy", as: :delete_booking
   resources :dashboards, only: [:show]
   devise_for :users
   # root to: "pages#home"
