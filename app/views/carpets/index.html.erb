@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="page-title"><h1>Discover carpets around you</h1></div>
-<div class="container-cards">
+<div class="container-cards" id="index-container">
   <% @carpets.each do |carpet| %>
     <%= link_to carpet_path(carpet), class: "text-decoration-none link-dark" do %>
     <div class="cards">
