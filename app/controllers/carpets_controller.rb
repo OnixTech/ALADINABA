@@ -1,7 +1,7 @@
 class CarpetsController < ApplicationController
   before_action :set_carpets, only: [:show, :edit, :update, :destroy]
   def index
-    @carpets = Carpet.all
+    @carpets = Carpet.all.reverse
   end
 
   def show
