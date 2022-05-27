@@ -5,7 +5,19 @@
       <p>Rent a beautiful carpet for a day</p>
     </div>
 </div>
-<div class="page-title"><h1>Discover carpets around you</h1></div>
+
+<div class="search d-flex">
+  <h1 class="page-title">Discover carpets around you</h1>
+  <%= form_tag carpets_path, method: :get, class: "d-flex search-bar" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a carpet"
+    %>
+    <%= submit_tag "Search", class: "btn btn-dark" %>
+  <% end %>
+</div>
+
 <div class="container-cards" id="index-container">
   <% @carpets.each do |carpet| %>
     <%= link_to carpet_path(carpet), class: "text-decoration-none link-dark" do %>
@@ -16,6 +28,8 @@
       <div class="card-body">
           <h3><%= carpet.name %></h3>
           <p><%= carpet.description %></p>
+          <p><%= carpet.condition %></p>
+          <p><%= carpet.address %></p>
           <p id="index-price">$ <%= carpet.price%> day</p>
       </div>
     </div>
