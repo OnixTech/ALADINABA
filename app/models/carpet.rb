@@ -8,4 +8,11 @@ class Carpet < ApplicationRecord
   validates :address, presence: true
   validates :user_id, presence: true
   validates :price, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_details,
+  against: [ :name, :description, :address, :condition ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
