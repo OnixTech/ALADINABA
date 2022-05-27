@@ -19,10 +19,9 @@
   <%= link_to carpet_path(carpet), class: "text-decoration-none link-dark" do %>
       <div class="card-body">
         <h3><%= carpet.name%></h3>
-        <p><%= carpet.description%></p>
         <p><%= carpet.condition%></p>
         <p><%= carpet.address%></p>
-        <p id="index-price">$ <%= carpet.price%> day</p>
+        <p id="index-price">$ <%= carpet.price.to_i%> day</p>
 
         <br>
 
@@ -54,7 +53,7 @@
         <p>Booked from:
         <br>
         <%= booking.booked_from %> to <%= booking.booked_until %></p>
-        <p id="index-price"> Total $ <%= booking.carpet.price * (total_booking_time.to_i + 1) %></p>
+        <p id="index-price"> Total $ <%= (booking.carpet.price * (total_booking_time.to_i + 1)).to_i %></p>
 
         <br>
 

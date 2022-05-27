@@ -19,7 +19,7 @@
             <li>Condition: <%= @carpet.condition %></li>
             <br>
             <li class="card-text text-start"><p><%= @carpet.description %></p></li>
-            <li id="price-show"><strong>$<%= @carpet.price %>/day</strong></li>
+            <li id="price-show"><strong>$<%= @carpet.price.to_i %>/day</strong></li>
           </ul>
           <div class="d-flex my-5">
             <% if current_user == @carpet.user %>
