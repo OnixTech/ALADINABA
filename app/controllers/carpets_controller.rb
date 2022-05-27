@@ -1,7 +1,11 @@
 class CarpetsController < ApplicationController
   before_action :set_carpets, only: [:show, :edit, :update, :destroy]
   def index
-    @carpets = Carpet.all.reverse
+    if params[:query].present?
+      @carpets = Carpet.search_by_details(params[:query])
+    else
+      @carpets = Carpet.all.reverse
+    end
   end
 
   def show

@@ -23,6 +23,11 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @carpet = Carpet.find(@booking.carpet.id)
+    @carpet_bookings = []
+    @carpet.bookings.each do |booking|
+    @carpet_bookings << {from: booking.booked_from, to: booking.booked_until}
+    end
   end
 
   def destroy
