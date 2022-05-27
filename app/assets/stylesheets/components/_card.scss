@@ -58,3 +58,17 @@
 .custom-card-body {
   position: unset;
 }
+
+.card-position2 {
+  position: relative;
+}
+
+.card-position {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+#price-show {
+  font-size: 24px;
+}
