@@ -21,6 +21,14 @@
             <li class="card-text text-start"><p><%= @carpet.description %></p></li>
             <li id="price-show"><strong>$<%= @carpet.price %>/day</strong></li>
           </ul>
+          <div class="d-flex my-5">
+            <% if current_user == @carpet.user %>
+              <%= link_to "Edit", edit_carpet_path(@carpet), class: "btn btn-dark text-start" %>
+              <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark text-start mx-2" %>
+            <% else %>
+              <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark text-start" %>
+            <% end %>
+          </div>
         </div>
       </div>
       </div>
