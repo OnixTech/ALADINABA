@@ -15,9 +15,11 @@
       <li class="list-group-item">Available: <%= @carpet.available %></li>
   </ul>
   <div class="card-body custom-card-body d-flex justify-content-around">
-      <%= link_to "All Carpets", carpets_path, class: "btn btn-dark" %>
+    <% if current_user == @carpet.user %>
       <%= link_to "Edit", edit_carpet_path(@carpet), class: "btn btn-dark" %>
       <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
+    <% else %>
       <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark" %>
+    <% end %>
   </div>
 </div>

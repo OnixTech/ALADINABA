@@ -16,6 +16,7 @@
         <%= cl_image_tag carpet.photo.key, width: 250, crop: :fill %>
       <% end %>
 
+  <%= link_to carpet_path(carpet), class: "text-decoration-none link-dark" do %>
       <div class="card-body">
         <h3><%= carpet.name%></h3>
         <p><%= carpet.description%></p>
@@ -27,6 +28,7 @@
         <%= link_to "Edit", edit_carpet_path(carpet_id), class: "btn btn-dark" %>
       </div>
     </div>
+  <% end %>
   <% end %>
 </div>
 
