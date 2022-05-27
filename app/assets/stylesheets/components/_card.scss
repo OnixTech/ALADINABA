@@ -36,6 +36,10 @@
   padding: 8px;
 }
 
+
+#new-carpet-card {
+  margin-top: 16px;
+}
 .card-body {
   position: absolute;
   left: 8px;
@@ -46,4 +50,11 @@
 
 #index-price {
   font-weight: bold;
+}
+
+.cards-dashboard {
+  height: 550px;
+}
+.custom-card-body {
+  position: unset;
 }
