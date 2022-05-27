@@ -1,25 +1,28 @@
-<div class="card my-5" style="width: 400px; margin: auto;">
-  <% if @carpet.photo.attached? %>
-    <%= cl_image_tag @carpet.photo.key, height: 300, crop: :fill, class: "w-100" %>
-  <% else %>
-    <%# @carpet.photo.attached = "https://images.unsplash.com/photo-1588421874990-1fe162747f9b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" %>
-    <%= image_tag "https://images.unsplash.com/photo-1588421874990-1fe162747f9b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387", style:"height:300px;object-fit: cover;" %>
-  <% end %>
-  <div class="card-body custom-card-body">
-      <h2 class="card-title text-center"><%= @carpet.name %></h2>
-      <p class="card-text"><%= @carpet.description %></p>
-  </div>
-  <ul class="list-group list-group-flush">
-      <li class="list-group-item">Address: <%= @carpet.address %></li>
-      <li class="list-group-item">Condition: <%= @carpet.condition %></li>
-      <li class="list-group-item">Available: <%= @carpet.available %></li>
-  </ul>
-  <div class="card-body custom-card-body d-flex justify-content-around">
-    <% if current_user == @carpet.user %>
-      <%= link_to "Edit", edit_carpet_path(@carpet), class: "btn btn-dark" %>
-      <%= link_to "Delete", carpet_path(@carpet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark" %>
-    <% else %>
-      <%= link_to "Book", new_carpet_booking_path(@carpet),class: "btn btn-dark" %>
-    <% end %>
-  </div>
+<div class="container-sm">
+
+  <div class="p-1 show-container d-flex justify-center">
+    <div class="w-50">
+      <% if @carpet.photo.attached? %>
+        <%= cl_image_tag @carpet.photo.key, height: 300, crop: :fill, class: "cards show-img w-100" %>
+      <% else %>
+      <%# @carpet.photo.attached = "https://images.unsplash.com/photo-1588421874990-1fe162747f9b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387" %>
+        <%= image_tag "https://images.unsplash.com/photo-1588421874990-1fe162747f9b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387", class: "rounded-3", style:"height:300px;object-fit: cover;" %>
+      <% end %>
+    </div>
+    <div class="w-50 card-position2">
+      <div class="card-position">
+          <ul class="text-start list-unstyled">
+            <li><h1><%= @carpet.name %></h1></li>
+            <li><div class= "fas fa-map-marker-alt"> - </div><%= @carpet.address %></li>
+            <br>
+            <li>Posted by: <%= @carpet.user.first_name %> <%= @carpet.user.last_name %></li>
+            <li>Condition: <%= @carpet.condition %></li>
+            <br>
+            <li class="card-text text-start"><p><%= @carpet.description %></p></li>
+            <li id="price-show"><strong>$<%= @carpet.price %>/day</strong></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+  <div>
 </div>
